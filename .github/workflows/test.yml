@@ -1,0 +1,26 @@
+name: test
+
+on:
+  push:
+    branch:
+    - 'main'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: SVN checkout 1
+        uses: ./
+        with:
+          resources_url: ${{ secrets.url1 }}
+          target_dir: ./data
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+      - name: SVN checkout 2
+        uses: ./
+        with:
+          resources_url: ${{ secrets.url2 }}
+          target_dir: ./data
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}

@@ -1,0 +1,27 @@
+name: 'svn-checkout'
+description: 'Checkout resources from svn'
+author: 'AlbertHuang'
+branding:
+  icon: 'command'
+  color: 'blue'
+inputs:
+  resources_url:
+    description: "svn resources url"
+    required: true
+  target_dir:
+    description: "checkout target dir"
+    required: true
+  username:
+    description: "svn auth username"
+    required: true
+  passworld:
+    description: "svn auth password"
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.resources_url }}
+    - ${{ inputs.target_dir }}
+    - ${{ inputs.username }}
+    - ${{ inputs.passworld }}
