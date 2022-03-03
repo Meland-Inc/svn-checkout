@@ -14,6 +14,6 @@ TARGET_DIR=$2
 USERNAME=$3
 PASSWORD=$4
 
-svn checkout --username $USERNAME --password $PASSWORD $URL $TARGET_DIR
+svn checkout --username $USERNAME --password $PASSWORD $URL "$TARGET_DIR"
 
-rm -rf $TARGET_DIR/.svn
+rm -rf "$TARGET_DIR/.svn"

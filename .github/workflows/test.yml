@@ -14,14 +14,14 @@ jobs:
         uses: ./
         with:
           resources_url: ${{ secrets.url1 }}
-          target_dir: ./data
+          target_dir: ./github/workspace/data
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
       - name: SVN checkout 2
         uses: ./
         with:
           resources_url: ${{ secrets.url2 }}
-          target_dir: ./data
+          target_dir: ./github/workspace/data
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
       
