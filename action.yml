@@ -14,7 +14,7 @@ inputs:
   username:
     description: "svn auth username"
     required: true
-  passworld:
+  password:
     description: "svn auth password"
     required: true
 runs:
@@ -24,4 +24,4 @@ runs:
     - ${{ inputs.resources_url }}
     - ${{ inputs.target_dir }}
     - ${{ inputs.username }}
-    - ${{ inputs.passworld }}
+    - ${{ inputs.password }}
